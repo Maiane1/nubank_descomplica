@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />	
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">    
+    <link rel="stylesheet" href="css/carousel.css">    
+    <script src="js/invoice.js" defer></script>		
+	<link type="image/x-icon" href="img/pricing-star.png" rel="shortcut icon"/>
+	<title>ToTall Jeans</title>
+</head>
+<body>
+	
+	<div id="page-container">
+		<div class="title">
+            <h1>To<span style="color: #ED1558;">Tall</span> Jeans</h1>
+        </div> 
+		<header> 
+            <Nav>
+                <ul class="menu-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lancamentos.html">Lançamentos</a></li>
+                    <li><a href="calcas.html">Calças</a></li>           
+                </ul>
+                <ul class="menu-nav menu-right">
+                    <li><a href="team.html">Nosso Time</a></li>
+                    <li><a href="somos.html">Quem Somos</a></li> 
+					<li><a href="invoice.html">Carrinho</a></li>                
+                </ul>
+            </Nav>                       
+        </header>
+		<div id="page-wrapper" class="container">
+			<div class="row">				
+				<div id="content-wrapper">
+					<div class="row">
+						<div class="col-lg-12">														
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="main-box clearfix">
+										<header class="main-box-header clearfix">
+											<h2 class="pull-left">Pedido número 20140566</h2>
+										</header>										
+										<div class="main-box-body clearfix">
+											<div class="table-responsive">
+												<table class="table">
+													<thead>
+														<tr>
+															<th class="text-center"><span>#</span></th>
+															<th><span>Produto</span></th>
+															<th class="text-center"><span>Total</span></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="text-center">
+																8001
+															</td>
+															<td>
+																Calça 1
+															</td>															
+															<td class="text-center">
+																&dollar; 1126.00
+															</td>
+														</tr>
+														<tr>
+															<td class="text-center">
+																8002
+															</td>
+															<td>
+																Calça 2
+															</td>															
+															<td class="text-center">
+																&dollar; 699.98
+															</td>
+														</tr>
+														<tr>
+															<td class="text-center">
+																8003
+															</td>
+															<td>
+																Calça 3
+															</td>															
+															<td class="text-center">
+																&dollar; 100.00
+															</td>
+														</tr>
+														<tr>
+															<td class="text-center">
+																8004
+															</td>
+															<td>
+																Calça 4
+															</td>															
+															<td class="text-center">
+																&dollar; 1126.00
+															</td>
+														</tr>
+														<tr>
+															<td class="text-center">
+																8005
+															</td>
+															<td>
+																Calça 5
+															</td>															
+															<td class="text-center">
+																&dollar; 4499.80
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											
+											<div class="invoice-box-total clearfix">
+												<div class="row">
+													<div class="col-sm-9 col-md-10 col-xs-6 text-right invoice-box-total-label">
+														Subtotal
+													</div>
+													<div class="col-sm-3 col-md-2 col-xs-6 text-right invoice-box-total-value" id="subtotal">
+														R&dollar; 
+													</div>
+												</div>
+												
+												<div class="row grand-total">
+													<div class="col-sm-9 col-md-10 col-xs-6 text-right invoice-box-total-label">
+														Total
+													</div>
+													<div class="col-sm-3 col-md-2 col-xs-6 text-right invoice-box-total-value" id="total">
+														&dollar; 8550.91
+													</div>
+												</div>
+											</div>
+																																
+											<div class="clearfix">
+												<a href="#" class="btn btn-success pull-right" id="btnFinalizarCompra" onclick="limparSessao()">
+													<i class="fa fa-mail-forward fa-lg"></i> Confirmar Compra
+												</a>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div id="divFooterContent">
+				
+				<div id="divFooterEndereco">
+					<p>
+					Rua das Alturas, 999 - Vila Alta - Altinópolis
+					</p>
+					<p>
+						11-91234-5678
+					</p>
+				</div>
+			</div>
+			
+		</footer>
+	</div>		
+	<script>
+		
+
+		function subtotal(){
+			var soma = 0.00;
+			for (var i = 0; i < sessionStorage.length; i++){
+				soma += parseFloat(sessionStorage.getItem(sessionStorage.key(i)));
+			}
+			sessionStorage.removeItem("subtotal");
+			sessionStorage.setItem("subtotal", soma);
+		}
+
+		subtotal();
+
+		document.getElementById("subtotal").innerText = sessionStorage.getItem("subtotal");
+		document.getElementById("total").innerText = sessionStorage.getItem("subtotal");
+	</script>
+</body>
+</html>
